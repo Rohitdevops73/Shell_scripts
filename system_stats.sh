@@ -1,5 +1,5 @@
 #!/bin/bash
-
+generate_report(){
 echo "-----------------------------"
 echo "SERVER PERFORMANCE STATISTICS"
 echo "-----------------------------"
@@ -63,3 +63,9 @@ who
 echo ""
 echo "---------------------------------------"
 echo "Server stats collected successfully"
+}
+
+OUTPUT_FILE="server_stats_$(date +%Y%m%d_%H%M%S).txt"
+generate_report > "$OUTPUT_FILE"
+
+echo "Report saved to $OUTPUT_FILE"
